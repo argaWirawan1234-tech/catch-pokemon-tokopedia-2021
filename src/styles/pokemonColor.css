@@ -1,0 +1,83 @@
+.normal-color {
+    color: 	#5fa4d8;
+}
+
+.fighting-color {
+    color: #cf5864;
+}
+
+.flying-color {
+    color: #df9478;
+}
+
+.poison-color {
+    color: #774fa0;
+}
+
+.ground-color {
+    color: #ca965b;
+}
+
+.rock-color {
+    color: #a14a1b;
+}
+
+.bug-color {
+    color: #428057;
+}
+
+.ghost-color {
+    color: #b85998;
+}
+
+.steel-color {
+    color: #948d8f;
+}
+
+.fire-color {
+    color: #db3447;
+}
+
+.water-color {
+    color: #397fda;
+}
+
+.grass-color {
+    color: #60c468;
+}
+
+.psychic-color {
+    color: #d35d6e;
+}
+
+.ice-color {
+    color: #58b7da;
+}
+
+.dragon-color {
+    color: #b93258;
+}
+
+.dark-color {
+    color: #4a426d;
+}
+
+.unknown-color {
+    color: #b9b9b9;
+}
+
+.shadow-color {
+    color: #588da8;
+}
+
+.electric-color {
+    color: #c9b259;
+}
+
+.fairy-color {
+    color: #61cccc;
+}
+
+.default-color {
+    color: #57b0da;
+}

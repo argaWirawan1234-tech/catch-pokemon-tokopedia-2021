@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
-}
+/* common*/
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;  
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.AppWrapper{
+  flex: 1;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-top: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shadowWrapper {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: black;
 }
+
+.shadowWrapper-enter{
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  z-index: -1;
+}
+
+.shadowWrapper-enter-active{
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all ease .5s;
+  z-index: 2;
+}
+
+.shadowWrapper-enter-done {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.shadowWrapper-exit{
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.shadowWrapper-exit-active {
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  transition: all ease .5s;
+  z-index: -1;
+
+}
+
+.shadowWrapper-exit-done {
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  z-index: -1;
+}
+
+.box {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+}
+
+.header {
+  max-height: 20px;
+  top:0px;
+  padding: 10px 20px!important;
+  box-shadow: 0px 2px 9px -3px rgba(107, 107, 107, 0.75);
+  -webkit-box-shadow: 0px 2px 9px -3px rgba(107, 107, 107, 0.75);
+  -moz-box-shadow: 0px 2px 9px -3px rgba(107, 107, 107, 0.75);
+}
+
+.header #left {
+  text-align:left;
+}
+
+.header #right {
+flex: 1;
+justify-content:flex-end;
+margin-right: 40px;
+}
+
+.sticky {
+  display: flex;
+  background-color: white;
+  padding:10px 0px;
+  z-index: 101;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+
+.navigation {
+  font-size: 12px;
+  font-weight:600;
+  color: rgb(51, 51, 51)!important;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.navigation img {
+margin-right: 5px;
+width:16px;
+}
+/* Inside*/

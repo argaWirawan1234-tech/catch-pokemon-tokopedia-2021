@@ -3,11 +3,33 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  ApolloProvider,
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+} from '@apollo/client'
+import { store, persistor } from './store/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { Provider } from 'react-redux'
+
+const httpLink = createHttpLink({
+  uri: 'https://graphql-pokeapi.vercel.app/api/graphql',
+})
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+})
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ApolloProvider client={client}>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>
+</ApolloProvider>,
   document.getElementById('root')
 );
 
