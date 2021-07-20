@@ -23,7 +23,7 @@
     opacity: 1;
     width: 10px;
     height: 10px;
-    transform: rotate(-50deg) translate(100px, 0px);
+    transform: rotate(-50deg) translate(100px, -10px);
     transition: all .2s linear;
   }
   
@@ -31,7 +31,7 @@
     opacity: 0;
     width: 10px;
     height: 10px;
-    transform: rotate(-50deg) translate(100px, 0px);
+    transform: rotate(-50deg) translate(100px, -10px);
     transition: opacity .2s;
   }
   
@@ -58,6 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   
   .pokeBall-enter {
@@ -215,6 +216,30 @@
     height: 20px;
     border: 4px solid black;
   }
+
+  .clickPokeBall{
+    display: flex;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    color: white;
+    justify-content: center;
+  }
+
+  .clickPokeBallActive{
+    animation-name: clickPokeBallActive;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+  
+    
+  @keyframes clickPokeBallActive  {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+  }
   
   .pokeBallActive {
     animation-name: pokeBallActive;
@@ -362,4 +387,4 @@
     border: none;
     cursor: pointer;
   }
-  
+

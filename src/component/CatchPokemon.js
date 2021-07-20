@@ -15,6 +15,7 @@ const CatchPokemon = ({pokemonDetail, image}) => {
   const ball3 = useRef()
   const pokemon = useRef()
   const pokeBallZoomCircle = useRef()
+  const clickPokeBall =useRef()
 
   const [ballZoom, setBallZoom] = useState(false)
   const [ballThrow, setBallThrow] = useState(false)
@@ -26,6 +27,8 @@ const CatchPokemon = ({pokemonDetail, image}) => {
   const [catchFail, setCatchFail] = useState(false)
   const [pokemonName, setPokemonName] = useState('')
   function catchProcess() {
+    clickPokeBall.current.style.opacity= '0'
+    clickPokeBall.current.className = 'clickPokeBall'
     setBallThrow(true)
     setTimeout(() => {
       ball2.current.style.opacity = 1
@@ -86,6 +89,8 @@ const CatchPokemon = ({pokemonDetail, image}) => {
     ball2.current.style.display = 'flex'
     ball3.current.style.display = 'none'
     ball2.current.style.opacity = 0
+    clickPokeBall.current.style.opacity= '1'
+    clickPokeBall.current.className = 'clickPokeBall clickPokeBallActive'
   }
 
   function submitPokemon(data, nickName){
@@ -167,6 +172,8 @@ const CatchPokemon = ({pokemonDetail, image}) => {
           <div className="pokeBallCircle"></div>
         </div>
       </CSSTransition>
+      <div ref={clickPokeBall} className="clickPokeBall clickPokeBallActive">Click Poke Ball</div>
+
       <CSSTransition in={catchSuccess || catchFail} timeout={500} classNames="catchSuccess">
           <div className="catchSuccess">
             <p>{catchSuccess ? 'Congrats, give it name!' : 'You fail!'}</p>
