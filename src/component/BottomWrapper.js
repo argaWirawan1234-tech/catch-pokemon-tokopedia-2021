@@ -173,7 +173,6 @@ function BottomWrapper({pokemonDetail}) {
     
             Promise.all(moveFetch)
             .then((res) => {
-                console.log(res)
                 setLoadMove(false)
                 const move = res.map(x => ({
                     name: x.name.split('-').length === 1 ? x.name.split('-')[0] :  x.name.split('-').join(' ') ,

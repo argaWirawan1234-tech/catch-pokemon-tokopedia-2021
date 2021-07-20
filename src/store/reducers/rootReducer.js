@@ -7,7 +7,6 @@ const initialState = {
 }
 
 function rootReducer(state = initialState, action) {
-  console.log(action.type, action.data)
   switch (action.type) {
     case 'SET_MY_POKEMON':
       return {

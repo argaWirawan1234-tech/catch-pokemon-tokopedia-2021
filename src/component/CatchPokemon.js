@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useRef, useEffect } from 'react'
 
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group'
@@ -92,6 +93,10 @@ const CatchPokemon = ({pokemonDetail, image}) => {
     dispatch(setMyPokemon(data))
     resetComponent()
   }
+
+  useEffect(() => {
+    if (pokemonDetail) resetComponent()
+  }, [pokemonDetail])
 
   return (
     <div
