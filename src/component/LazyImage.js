@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types";
 
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 
 function LazyImage({ src, alt, imgClass, wrapperClass }) {  
     return (

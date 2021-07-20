@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group'
