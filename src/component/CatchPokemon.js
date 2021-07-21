@@ -93,9 +93,15 @@ const CatchPokemon = ({pokemonDetail, image}) => {
     clickPokeBall.current.className = 'clickPokeBall clickPokeBallActive'
   }
 
-  function submitPokemon(data, nickName){
-    data['nickname'] = nickName
-    dispatch(setMyPokemon(data))
+  function submitPokemon(data, nickname){
+    const newData = {
+      name: data.name,
+      types: data.types,
+      sprites: data.sprites,
+      nickname,
+    }
+
+    dispatch(setMyPokemon(newData))
     resetComponent()
   }
 
