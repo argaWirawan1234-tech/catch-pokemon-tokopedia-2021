@@ -5,7 +5,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { CSSTransition } from 'react-transition-group'
 import PropTypes from "prop-types";
 
-import {setMyPokemon, setBottomWrapper} from '../store/actions/rootAction'
+import {setMyPokemon} from '../store/actions/rootAction'
 import '../styles/catchPokemon.css'
 
 const CatchPokemon = ({pokemonDetail, image}) => {
@@ -27,9 +27,9 @@ const CatchPokemon = ({pokemonDetail, image}) => {
   const [catchFail, setCatchFail] = useState(false)
   const [pokemonName, setPokemonName] = useState('') 
   
-  const {bottomWrapper} = useSelector((state) => ({
-        bottomWrapper: state.bottomWrapper
-    }))
+  //const {bottomWrapper} = useSelector((state) => ({
+        //bottomWrapper: state.bottomWrapper
+    //}))
 
   function catchProcess() {
     clickPokeBall.current.style.opacity= '0'
@@ -107,7 +107,7 @@ const CatchPokemon = ({pokemonDetail, image}) => {
 
     dispatch(setMyPokemon(newData))
     resetComponent()
-    dispatch(setBottomWrapper(!bottomWrapper))
+    // dispatch(setBottomWrapper(!bottomWrapper))
   }
 
   useEffect(() => {
