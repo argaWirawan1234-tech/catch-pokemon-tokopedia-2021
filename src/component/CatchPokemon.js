@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect } from 'react'
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { CSSTransition } from 'react-transition-group'
 import PropTypes from "prop-types";
 
-import {setMyPokemon} from '../store/actions/rootAction'
+import {setMyPokemon, setBottomWrapper} from '../store/actions/rootAction'
 import '../styles/catchPokemon.css'
 
 const CatchPokemon = ({pokemonDetail, image}) => {
@@ -17,7 +17,7 @@ const CatchPokemon = ({pokemonDetail, image}) => {
   const pokeBallZoomCircle = useRef()
   const clickPokeBall =useRef()
 
-  const [ballZoom, setBallZoom] = useState(false)
+  const [ballZoom, setBallZoom] = useState(false) ''
   const [ballThrow, setBallThrow] = useState(false)
   const [catchText, setCatchText] = useState(false)
   const [ballThrow2, setBallThrow2] = useState(false)
@@ -25,7 +25,12 @@ const CatchPokemon = ({pokemonDetail, image}) => {
   const [pokemonFree, setPokemonFree] = useState(false)
   const [catchSuccess, setCatchSuccess] = useState(false)
   const [catchFail, setCatchFail] = useState(false)
-  const [pokemonName, setPokemonName] = useState('')
+  const [pokemonName, setPokemonName] = useState('') 
+  
+  const {bottomWrapper} = useSelector((state) => ({
+        bottomWrapper: state.bottomWrapper
+    }))
+
   function catchProcess() {
     clickPokeBall.current.style.opacity= '0'
     clickPokeBall.current.className = 'clickPokeBall'
@@ -74,7 +79,6 @@ const CatchPokemon = ({pokemonDetail, image}) => {
     }
   }
 
-
   function resetComponent(){
     if(pokemonName.length > 0)setPokemonName('')
     if(catchFail)setCatchFail(false)
@@ -103,6 +107,7 @@ const CatchPokemon = ({pokemonDetail, image}) => {
 
     dispatch(setMyPokemon(newData))
     resetComponent()
+    dispatch(setBottomWrapper(!bottomWrapper)
   }
 
   useEffect(() => {
