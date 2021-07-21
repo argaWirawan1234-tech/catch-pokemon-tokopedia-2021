@@ -17,7 +17,7 @@ const CatchPokemon = ({pokemonDetail, image}) => {
   const pokeBallZoomCircle = useRef()
   const clickPokeBall =useRef()
 
-  const [ballZoom, setBallZoom] = useState(false) ''
+  const [ballZoom, setBallZoom] = useState(false)
   const [ballThrow, setBallThrow] = useState(false)
   const [catchText, setCatchText] = useState(false)
   const [ballThrow2, setBallThrow2] = useState(false)
