@@ -107,7 +107,7 @@ const CatchPokemon = ({pokemonDetail, image}) => {
 
     dispatch(setMyPokemon(newData))
     resetComponent()
-    dispatch(setBottomWrapper(!bottomWrapper)
+    dispatch(setBottomWrapper(!bottomWrapper))
   }
 
   useEffect(() => {
