@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect } from 'react'
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from 'react-transition-group'
 import PropTypes from "prop-types";
 
@@ -26,6 +26,10 @@ const CatchPokemon = ({pokemonDetail, image}) => {
   const [catchSuccess, setCatchSuccess] = useState(false)
   const [catchFail, setCatchFail] = useState(false)
   const [pokemonName, setPokemonName] = useState('')
+
+  const {myPokemon} = useSelector((state) => ({
+    myPokemon: state.myPokemon
+  }))
   function catchProcess() {
     clickPokeBall.current.style.opacity= '0'
     clickPokeBall.current.className = 'clickPokeBall'
@@ -93,10 +97,18 @@ const CatchPokemon = ({pokemonDetail, image}) => {
     clickPokeBall.current.className = 'clickPokeBall clickPokeBallActive'
   }
 
+  function checkNickName(array, name, id) {
+    return array.some(x => (x.nickname === name && x.id === id))
+  }
+
   function submitPokemon(data, nickName){
-    data['nickname'] = nickName
-    dispatch(setMyPokemon(data))
-    resetComponent()
+    if(checkNickName(myPokemon, nickName, data.id )){
+      alert('Pokemon alredy exist')
+    }else {
+      data['nickname'] = nickName
+      dispatch(setMyPokemon(data))
+      resetComponent()
+    }
   }
 
   useEffect(() => {
