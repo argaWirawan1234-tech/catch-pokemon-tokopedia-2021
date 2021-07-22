@@ -5,7 +5,7 @@
     right: 0;
     height: 100vh;
     background-color: white;
-    z-index: 2;
+    z-index: 100;
     min-width: 250px;
     max-width: 300px;
     transform: translateX(250px);
