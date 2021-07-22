@@ -5,9 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // import { useLazyQuery } from '@apollo/client'
 import PropTypes from "prop-types";
 
-
-import { setBottomWrapper } from '../store/actions/rootAction'
-import { getData } from '../store/actions/rootAction'
+import { getData, setBottomWrapper} from '../store/actions/rootAction'
 // import evolutionQuery from '../query/evolutionQuery'
 import imagePokemon from '../helper/imagePokemon' 
 import '../styles/bottomWrapper.css'

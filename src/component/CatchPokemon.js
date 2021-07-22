@@ -78,7 +78,6 @@ const CatchPokemon = ({pokemonDetail, image}) => {
     }
   }
 
-
   function resetComponent(){
     if(pokemonName.length > 0)setPokemonName('')
     if(catchFail)setCatchFail(false)
